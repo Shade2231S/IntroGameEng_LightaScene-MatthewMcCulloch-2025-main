@@ -1,17 +1,20 @@
+using NUnit.Framework.Constraints;
 using UnityEngine;
+using UnityEngine.Audio;
 public class DoreTrigger : MonoBehaviour
 {
+    //public Controller con;
     public Animator ani = null;
-    public bool trigger = false;
+    public AudioSource aud; 
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (trigger)
-            {
-                ani.Play("Door open nicley");
-                gameObject.SetActive(false);
-            }
+
+            ani.Play("Door open nicley");
+            gameObject.SetActive(false);
+            aud.Play();
         }
     }
 }

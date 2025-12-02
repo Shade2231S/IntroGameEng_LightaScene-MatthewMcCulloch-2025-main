@@ -31,7 +31,6 @@ public class Controller : MonoBehaviour
 
     public bool LockControl { get; set; }
     public bool CanPause { get; set; } = true;
-
     public bool Grounded => m_Grounded;
 
     CharacterController m_CharacterController;
