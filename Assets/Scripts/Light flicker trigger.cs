@@ -7,9 +7,7 @@ public class Lightflickertrigger : MonoBehaviour
 {
     //public Controller con;
     public Animator ani = null;
-    public List<Light> lights = new List<Light>();
-    public List<GameObject> bulbson = new List<GameObject>();
-    public List<GameObject> bulbsoff = new List<GameObject>();
+    public AudioSource aud;
     public PlayableDirector timelineDirector;
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +15,8 @@ public class Lightflickertrigger : MonoBehaviour
         {
                 timelineDirector.Play();
                 gameObject.SetActive(false);
-                ani.Play("Door breakback");                       
+                ani.Play("Door breakback");
+                aud.Play();
         }
     }
 }

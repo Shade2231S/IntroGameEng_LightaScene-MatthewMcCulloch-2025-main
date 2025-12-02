@@ -8,7 +8,8 @@ public class Screem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {             
-                aud.Play();           
+                aud.Play();
+                gameObject.SetActive(false);
         }
     }
 }
